@@ -1,4 +1,31 @@
-table, th, td   {
-    border: 1px red solid;
-    border-collapse: collapse;
+body {
+  font-family: Noto Sans;
+  background-image: url(../images/FrimLogo1212341.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+table,
+th,
+td {
+  border: 1px black solid;
+  border-collapse: collapse;
+  width: fit-content;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-weight: 600;
+}
+
+div {
+  display: flex;
+  justify-content: center; /* horizontal */
+}
+
+th{
+    font-weight: 700;
+}
+
+.title{
+    display: flex;
+    justify-self: center;
 }
