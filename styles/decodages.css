@@ -25,6 +25,10 @@ th{
     font-weight: 700;
 }
 
+td:nth-child(1){
+  text-align: center;
+}
+
 .title{
     display: flex;
     justify-self: center;

@@ -1,4 +1,4 @@
-import printList from "./printList.js";
+import printList from "../printList.js";
 
 const leHorla03 = {
   Moquées: ["Rire méchamment de quelqu’un d’autre", "v"],
