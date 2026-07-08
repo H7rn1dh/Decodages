@@ -51,7 +51,7 @@ input[type="submit"]:hover {
   margin: 2%;
   border-radius: 50px;
   padding: 1%;
-  transition: padding 0.25s;
+  transition: padding 0.25s, shadow 0.25s;
 }
 
 .feedback-but:hover{

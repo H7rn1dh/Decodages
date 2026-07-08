@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../styles/decodages.css" />
+    <link rel="stylesheet" href="../../styles/feedback.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -22,6 +23,36 @@
         </tr>
       </table>
     </div>
+    <div class="form" id="form">
+      <form action="https://formspree.io/f/mojozkwp" method="POST">
+        <label for="name">Name : </label><br />
+        <input type="text" id="name" name="name" required /><br />
+        <label for="email">Email Address : </label><br />
+        <input type="email" id="email" name="email" /><br />
+        <label for="Message">Message : </label><br />
+        <textarea id="Message" cols="45" rows="5" name="message"></textarea
+        ><br />
+        <input type="submit" value="Submit" class="submit-but" />
+      </form>
+    </div>
+
+    <div>
+      <button
+        class="feedback-but"
+        id="feedback"
+        onclick="
+          const myForm = document.getElementById('form');
+          const visibilityStatus = myForm.style.visibility;
+          if (visibilityStatus === 'visible') {
+            myForm.style.visibility = 'hidden';
+          }
+          else{
+            myForm.style.visibility = 'visible';
+          }
+        "
+      >
+        Feedback
+      </button>
     <script type="module" src="POKÉ-04.js"></script>
   </body>
 </html>
