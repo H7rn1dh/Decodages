@@ -32,10 +32,3 @@ th {
   justify-self: center;
 }
 
-.feedback-but{
-  background-color: red;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 2%;
-}
