@@ -1,0 +1,73 @@
+body {
+  font-size: normal;
+  font-family: Noto Sans;
+  background-image: url(../images/Logo500.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1%;
+  margin-top: 2%;
+  width: auto;
+  margin-right: 2%;
+}
+
+select {
+  border: 1px solid black;
+  padding: 1%;
+  border-radius: 5px;
+  width: auto;
+}
+
+.submit-button {
+  display: flex;
+  background-color: salmon;
+  border: none;
+  border-radius: 5px;
+  padding: 1%;
+  margin-top: 1%;
+  justify-self: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(10, auto);
+  padding: 2%;
+  justify-self: center;
+  column-gap: 3%;
+  width: auto;
+}
+
+h1 {
+  justify-self: center;
+}
+
+#deco-page {
+  padding: 3%;
+  background-color: cadetblue;
+
+  border: none;
+  border-radius: 5px;
+}
+
+#close {
+  padding: 3%;
+  background-color: salmon;
+  border: none;
+  border-radius: 5px;
+  color: white; 
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#correct-answers{
+  justify-self: center;
+}

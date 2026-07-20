@@ -36,23 +36,10 @@
       </form>
     </div>
 
-    <div>
-      <button
-        class="feedback-but"
-        id="feedback"
-        onclick="
-          const myForm = document.getElementById('form');
-          const visibilityStatus = myForm.style.visibility;
-          if (visibilityStatus === 'visible') {
-            myForm.style.visibility = 'hidden';
-          }
-          else{
-            myForm.style.visibility = 'visible';
-          }
-        "
-      >
-        Feedback
-      </button>
+    <div class="fixed-container">
+      <button class="feedback-but" id="feedback">Feedback</button>
+      <button id="test-but"><a href="../../testPage.html">Test</a></button>
+    </div>
     <script type="module" src="POKÉ-02.js"></script>
   </body>
 </html>

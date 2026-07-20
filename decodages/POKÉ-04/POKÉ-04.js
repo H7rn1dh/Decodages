@@ -1,50 +1,32 @@
 import printList from "../printList.js";
-
-const vocab = {
-  Vérité: ["Une chose qui est vraie", "nf"],
-  Solennellement: ["D'une manière très sérieuse", "adv"],
-  Serai: ["Être (futur simple)", "v"],
-  "Tout les temps": ["Qui arrive à chaque moment", "expr"],
-  Bourg: ["Un très petit village", "nm"],
-  Ravi: ["Être très heureux ou content", "adj"],
-  Volée: ["Groupe d'oiseaux", "nf"],
-  Redoutables: ["Quelque chose qui fait peur", "adj"],
-  Stupéfiant: ["Quelque chose de très surprenant", "adj"],
-  Affaibli: ["Qui n'a plus de force", "adj"],
-  Battus: ["Frappé ou vaincu au combat", "adj/v"],
-  Signale: ["Indiquer ou montrer une chose", "v"],
-  Braconniers: ["Personnes qui chassent sans permission", "nm"],
-  Pourchassaient: ["Courir après quelqu'un pour l'attraper", "v"],
-  Méfiez: ["Faire attention à un danger", "v"],
-  Loup: ["Un animal sauvage qui hurle", "nm"],
-  Blessé: ["Personne qui a mal physiquement", "adj/n"],
-  Urgence: ["Une situation qui demande d'agir vite", "nf"],
-  Soigner: ["Donner des soins aux malades", "v"],
-  Papiers: ["Documents écrits ou feuilles", "nm"],
-  Comprenez: ["Saisir le sens d'une chose", "v"],
-  Drôle: ["Quelque chose qui fait rire", "adj"],
-  Inhabituel: ["Ce qui n'est pas normal", "adj"],
-  Puis: ["Un mot pour dire 'ensuite'", "adv"],
-  Prie: ["Demander poliment ou avec force", "v"],
-  Volerai: ["Prendre ce qui n'est pas à soi", "v"],
-  Poche: ["Petit sac dans un vêtement", "nf"],
-  Résoudra: ["Trouver la solution d'un problème", "v"],
-  Fournir: ["Donner ou apporter quelque chose", "v"],
-  Perte: ["Action de perdre quelque chose", "nf"],
-  Vol: ["Action de voler un objet", "nm"],
-  Pourrais: ["Avoir la capacité de faire", "v"],
-  Songé: ["Avoir pensé à quelque chose", "v"],
-  Avis: ["Ce que l'on pense", "nm"],
-  "Ait réussi": ["Avoir fini avec succès", "v"],
-  "Moi profond": ["Les sentiments cachés d'une personne", "expr"],
-  Leur: ["Appartient à ces personnes-là", "dét/pron"],
-  Regretta: ["Être triste d'avoir fait quelque chose", "v"],
-  Amèrement: ["Avec beaucoup de tristesse", "adv"],
-  Patelin: ["Un petit village très calme", "nm"],
-  Oubliez: ["Ne pas se souvenir", "v"],
-  Aie: ["Avoir au présent du subjonctif", "v"],
-  Crainte: ["Un sentiment de peur", "nf"],
-  Oublierons: ["Ne plus garder en mémoire", "v"],
-};
+import { vocab } from "./POKÉ-04-vocab.js";
+import { delay } from "../printList.js";
 
 printList(vocab, "vocab-table");
+
+const feedbackBtn = document.getElementById("feedback");
+
+feedbackBtn.onclick = async function () {
+  const myForm = document.getElementById("form");
+  const visibilityStatus = myForm.style.visibility;
+  if (visibilityStatus === "visible") {
+    myForm.style.transformOrigin = "bottom";
+    myForm.style.transform = "scaleY(0)";
+    myForm.style.transition = "transform 0.25s ease";
+    await delay(300);
+    myForm.style.visibility = "hidden"; //try getting rid of this + the hidden css style in feedback.css
+  } else {
+    myForm.style.visibility = "visible"; //try getting rid of this
+    myForm.style.transformOrigin = "bottom";
+    myForm.style.transform = "scaleY(1)";
+    myForm.style.transition = "transform 0.25s ease";
+  }
+};
+
+const testBtn = document.getElementById("test-but");
+
+testBtn.onclick = function () {
+  const fileName = window.location.pathname;
+  localStorage.setItem("file", fileName);
+  console.log(fileName);
+};

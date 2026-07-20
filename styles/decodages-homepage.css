@@ -29,7 +29,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.25s;
 }
 
 button:hover {
@@ -43,18 +43,14 @@ img {
 }
 
 hr {
-  width: auto;
+  width: 50%;
   border: none;
   height: 2px;
-  background-color: red;
-}
-
-.logo{
-  width: 5%;
-  padding: 1%;
-  border-radius: 45%;
+  background-color: blue;
 }
 
 .page-title{ 
   display: flex;
+  width: fit-content;
+  justify-self: center;
 }

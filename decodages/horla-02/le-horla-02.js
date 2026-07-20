@@ -1,50 +1,32 @@
 import printList from "../printList.js";
+import { vocab } from "./le-horla-02-vocab.js";
+import { delay } from "../printList.js";
 
-const leHorla02 = {
-  Guéri: ["Qui n’est pas malade du tout", "adj"],
-  Colline: ["Petite montagne arrondie dans un paysage", "nm/nf"],
-  Baie: ["Grande entrée de mer dans les terres", "nf"],
-  Brumes: ["Brouillard léger qui cache la vue", "nf"],
-  Pointu: ["Qui se termine par un bout piquant", "adj"],
-  Abbaye: ["Monastère ou grande église pour les moines", "nf"],
-  Gothique: ["Style d’architecture ancien du Moyen Âge", "adj"],
-  Chimères: ["Monstres imaginaires ou illusions bizarres", "nf"],
-  Mîmes: ["Commencer à faire une action ensemble", "v"],
-  Cuirasse: ["Armure rigide qui protège le corps", "nf"],
-  Bêler: ["Faire le cri de la chèvre", "v"],
-  Bouc: ["Mâle de la chèvre avec cornes", "nm"],
-  Édifices: ["Grands bâtiments ou constructions de pierre", "nm"],
-  Déracines: ["Enlever une plante avec ses racines", "v"],
-  Sangsue: ["Petit ver aquatique qui suce le sang", "nf"],
-  Carafe: ["Bouteille en verre pour servir l’eau", "nf"],
-  Secousse: ["Mouvement brusque qui fait trembler", "nf"],
-  Bougie: ["Objet en cire qui donne de la lumière", "nf"],
-  Somnambule: ["Personne qui marche pendant son sommeil", "nm/nf"],
-  Anime: ["Donner de la vie ou de l’énergie", "v"],
-  Engourdie: ["Endormie ou privée de sa sensibilité", "adj"],
-  Oser: ["Avoir le courage de faire quelque chose", "v"],
-  Soin: ["Attention particulière portée à une action", "nm"],
-  Mousseline: ["Tissu de coton très léger et fin", "nf"],
-  Ficeler: ["Attacher un objet avec une corde", "v"],
-  Remué: ["Bouger une partie de son corps", "v"],
-  Cordons: ["Petites cordes pour attacher des objets", "nm"],
-  Affolement: ["Grande panique qui fait perdre la raison", "nm"],
-  Démence: ["Perte grave des capacités morales", "nf"],
-  Aplomb: ["Confiance ou équilibre", "nm"],
-  Guérir: ["Aller mieux après une maladie", "v"],
-  Hypnotisme: ["État de sommeil provoqué par influence", "nm"],
-  Savants: ["Personnes très scientifiques et instruites", "nm"],
-  Incrédule: ["Qui ne croit pas facilement", "adj/n"],
-  Rôdeurs: ["Personnes qui marchent sans but pour surveiller", "nm"],
-  Tord: ["Tourner un objet avec force", "v"],
-  Assaillirent: ["Attaquer soudainement et violemment", "v"],
-  Supercherie: ["Ruse ou tromperie", "nf"],
-  Balbutiais: ["Parler avec hésitation", "v"],
-  Farce: ["Blague pour s’amuser", "nf"],
-  Dettes: ["Argent que l’on doit payer", "nf"],
-  Pouls: ["Battement du cœur au poignet", "nm"],
-  Accablée: ["Très fatiguée ou écrasée", "adj"],
-  Portefeuille: ["Objet pour ranger l’argent", "nm"],
+printList(vocab, "vocab-table");
+
+const feedbackBtn = document.getElementById("feedback");
+
+feedbackBtn.onclick = async function () {
+  const myForm = document.getElementById("form");
+  const visibilityStatus = myForm.style.visibility;
+  if (visibilityStatus === "visible") {
+    myForm.style.transformOrigin = "bottom";
+    myForm.style.transform = "scaleY(0)";
+    myForm.style.transition = "transform 0.25s ease";
+    await delay(300);
+    myForm.style.visibility = "hidden"; //try getting rid of this + the hidden css style in feedback.css
+  } else {
+    myForm.style.visibility = "visible"; //try getting rid of this
+    myForm.style.transformOrigin = "bottom";
+    myForm.style.transform = "scaleY(1)";
+    myForm.style.transition = "transform 0.25s ease";
+  }
 };
 
-printList(leHorla02, "vocab-table");
+const testBtn = document.getElementById("test-but");
+
+testBtn.onclick = function () {
+  const fileName = window.location.pathname;
+  localStorage.setItem("file", fileName);
+  console.log(fileName);
+};

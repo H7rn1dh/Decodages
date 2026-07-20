@@ -20,7 +20,7 @@ td {
 div {
   display: flex;
   justify-content: center; /* horizontal */
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 th {
@@ -33,3 +33,24 @@ th {
   justify-self: center;
 }
 
+#test-but{
+  background-color: rgb(50, 50, 255);
+  border: none;
+  position: fixed;
+  bottom: 8%;
+  right: 0;
+  margin: 2%;
+  border-radius: 50px;
+  padding: 1%;
+  transition: padding 0.25s;
+}
+
+#test-but:hover{
+  cursor: pointer;
+  padding: 1.25%;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}

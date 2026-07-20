@@ -1,66 +1,32 @@
 import printList from "../printList.js";
-
-const vocab = {
-  Mignon: ["Joli, adorable", "adj"],
-  Espérer: ["Souhaiter, vouloir", "v"],
-  Souris: ["Petit rongeur (ou accessoire pour ordinateur)", "nf"],
-  Timide: ["Peu assuré, réservé", "adj"],
-  Électrifiante: ["Très excitante, énergisante", "adj"],
-  Véritable: ["Authentique, réel", "adj"],
-  Foudre: ["Éclair, décharge électrique", "nf"],
-  Fière: ["Contente de soi", "adj"],
-  Réaliser: ["Accomplir, concrétiser", "v"],
-  Dresseur: ["Entraîneur d’animaux", "nm"],
-  Manquer: ["Ressentir l'absence de quelqu'un", "v"],
-  Baskets: ["Chaussures de sport", "nf"],
-  Jeans: ["Pantalon en denim", "nm"],
-  Savon: ["Produit pour se laver", "nm"],
-  "Maillot de bain": ["Vêtement pour nager", "nm"],
-  Cochonneries: ["Malbouffe, saletés", "nf"],
-  Pince: ["Outil pour saisir", "nf"],
-  Caoutchouc: ["Matière élastique", "nm"],
-  Lessive: ["Produit pour laver", "nf"],
-  Linge: ["Vêtement à laver", "nm"],
-  "(Se) Débrouiller": ["Trouver les moyens", "v"],
-  Remporter: ["Gagner, obtenir", "v"],
-  Devenir: ["Se transformer en", "v"],
-  Pensais: ["Croyais", "v"],
-  Balle: ["Objet rond pour jouer", "nf"],
-  Meilleurs: ["Excellents", "adj"],
-  Isole: ["Sépare, mets à part", "v"],
-  Vêtements: ["Habits, tenues", "nm"],
-  Gentil: ["Aimable, bienveillant", "adj"],
-  Faciliter: ["Rendre plus simple", "v"],
-  Devrais: ["Avoir l'obligation de", "v"],
-  Dresser: ["Former, entraîner", "v"],
-  Néanmoins: ["Cependant, pourtant", "adv"],
-  Supportent: ["Tolèrent, acceptent", "v"],
-  Sentiras: ["Percevras, ressentiras", "v"],
-  Ai: ["Éprouve (pas le besoin de)", "v"],
-  Suffit: ["(Ce n') est (pas) assez", "v"],
-  Volants: ["Qui se déplacent dans les airs", "adj"],
-  Dociles: ["Faciles à contrôler", "adj"],
-  Idéaux: ["Parfaits", "adj"],
-  Dextérité: ["Habileté, adresse", "nf"],
-  Obéir: ["Se soumettre à, suivre", "v"],
-  Franchi: ["Traversé, dépassé", "v"],
-  Estimer: ["Évaluer, juger", "v"],
-  Heureux: ["Content, satisfait", "adj"],
-  Raté: ["Échoué, manqué", "v"],
-  "Celui-ci": ["Ce Pokémon-là", "pron"],
-  Affaibli: ["Rendu moins fort", "adj"],
-  Affronter: ["Faire face à, braver", "v"],
-  Craindre: ["Avoir peur de", "v"],
-  "Ça y est": ["C'est réussi", "expr"],
-  "Jette-sable": ["Une attaque Pokémon", "nm/prép"],
-  Fiche: ["Va-t'en", "v"],
-  Camp: ["Lieu, endroit", "nm"],
-  Noix: ["Fruit à coque dure", "nf"],
-  Baies: ["Petits fruits", "nf"],
-  Clairière: ["Espace dégagé dans une forêt", "nf"],
-  Plein: ["Directement", "loc adv"],
-  Piafabecs: ["Pokémons oiseaux", "nm"],
-  Caractère: ["Personnalité, tempérament", "nm"],
-};
+import { vocab } from "./POKÉ-02-vocab.js";
+import { delay } from "../printList.js";
 
 printList(vocab, "vocab-table");
+
+const feedbackBtn = document.getElementById("feedback");
+
+feedbackBtn.onclick = async function () {
+  const myForm = document.getElementById("form");
+  const visibilityStatus = myForm.style.visibility;
+  if (visibilityStatus === "visible") {
+    myForm.style.transformOrigin = "bottom";
+    myForm.style.transform = "scaleY(0)";
+    myForm.style.transition = "transform 0.25s ease";
+    await delay(300);
+    myForm.style.visibility = "hidden"; //try getting rid of this + the hidden css style in feedback.css
+  } else {
+    myForm.style.visibility = "visible"; //try getting rid of this
+    myForm.style.transformOrigin = "bottom";
+    myForm.style.transform = "scaleY(1)";
+    myForm.style.transition = "transform 0.25s ease";
+  }
+};
+
+const testBtn = document.getElementById("test-but");
+
+testBtn.onclick = function () {
+  const fileName = window.location.pathname;
+  localStorage.setItem("file", fileName);
+  console.log(fileName);
+};
